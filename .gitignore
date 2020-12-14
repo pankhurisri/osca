@@ -1,52 +1,41 @@
-# Prerequisites
-*.d
-
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+#include<stdio.h>
+#include<sys/types.h>
+#include<unistd.h>
+int main()
+{
+print(“\n\nWelcome to C.C,  by Pankhuri Srivastava”);
+int n=0;
+int m=0;
+pid_t pid;
+Do
+{
+printf(“ please enter a number greater than 0 to run c.c”)
+scanf(“%d”,&m);
+}while(m<=0);
+pid=fork();
+if(pid==0)
+{
+printf(“\n child is processing..\n”);
+printf(“%d”,m);
+while(m!=1)
+{
+if(m%2==0)
+{
+m=m/2;
+}
+else
+{
+m=m*3+1;
+}
+printf(“\n%d”,m);
+}
+printf(“child process is done”);
+}
+else
+{
+printf(“parent is waiting for child to complete its process.”);
+wait();
+printf(“\n parent process is done”);
+}
+return 0;
+}
